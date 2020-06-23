@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+// tslint:disable-next-line: import-blacklist
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -69,7 +70,9 @@ export class HeroService {
   /** POST: add a new hero to the server */
   addHero (hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
-      tap((hero: Hero) => this.log(`added hero w/ id=${hero.id}`)),
+      tap((heroTap: Hero) => {
+        return this.log(`added hero w/ id=${heroTap.id}`);
+      }),
       catchError(this.handleError<Hero>('addHero'))
     );
   }
