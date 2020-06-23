@@ -7,9 +7,10 @@
     "ng": "ng",
     "build": "ng build --prod",
     "start": "ng serve",
-    "test": "ng test --source-map=false",
+    "test": "ng test --source-map=false --watch=false --browsers=ChromeHeadlessCustom",
     "lint": "tslint ./src/**/*.ts -t verbose",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:ci": "npm run clean && npm run test && npm run build:prod"
   },
   "keywords": [],
   "author": "",
