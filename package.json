@@ -10,7 +10,7 @@
     "test": "ng test --source-map=false --watch=false --browsers=ChromeHeadlessCustom",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "e2e": "ng e2e",
-    "build:ci": "npm run clean && npm run test && npm run build:prod"
+    "build:ci": "npm run test && npm run build"
   },
   "keywords": [],
   "author": "",
